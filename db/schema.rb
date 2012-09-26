@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120926161442) do
+ActiveRecord::Schema.define(:version => 20120926164747) do
 
   create_table "scripts", :force => true do |t|
-    t.string   "e_content"
-    t.string   "v_content"
+    t.text     "e_content",     :limit => 255
+    t.text     "v_content",     :limit => 255
     t.integer  "script_number"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   add_index "scripts", ["created_at"], :name => "index_scripts_on_created_at"
