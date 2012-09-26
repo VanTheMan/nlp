@@ -1,0 +1,65 @@
+<div class="hero-unit">
+	<h2>Chào bạn</h2>
+	<p>Mình là Toàn, lớp K54CA, hiện nay mình đang cần dịch 10000 từ Tiếng Anh để phục vụ cho bài tập lớn môn Xử lí ngôn ngữ tự nhiên. Rất mong các bạn có thể bớt chút thời gian dịch cùng mình để mình có thể hoàn thành kịp tiến độ. Mình xin cảm ơn !^^!</p>
+
+	<%= link_to "Đi vào rồi lại đi ra", "#", :class => "btn btn-large btn-warning fancybox" %>
+	<%= link_to "Rất sẵn sàng", edit_scripts_path(), :class => "btn btn-large btn-success" %>
+</div>
+
+<div style="display:none">
+	<div id="inline">
+		<%= image_tag("too_sad.png", :class => "image")%>
+		<h2>Sao nỡ phụ lòng nhau</h2>
+		<p class="link">
+			<%= link_to "Kệ cmm", "http://mp3.zing.vn/bai-hat/Sao-no-danh-phu-nhau-Truong-Vu/IWZB7BCO.html", 
+				:class => "btn btn-danger" %>
+			<%= link_to "Dịch 1 tẹo vậy", edit_scripts_path(), :class => "btn btn-success" %>
+		</p>
+	</div>
+</div>
+
+<h2>Translated Sentences</h2>
+
+<div class="translated_scripts">
+	<%= render @translated_scripts %>
+</div>
+
+<script type="text/javascript">
+	$("a.fancybox").fancybox({
+        'href'   : '#inline',
+        'titleShow'  : false,
+        'transitionIn'  : 'elastic',
+        'transitionOut' : 'elastic'
+    });
+
+    (function() {
+	  	var page = 1,
+	    	loading = false;
+
+	  	function nearBottomOfPage() {
+	    	return $(window).scrollTop() > $(document).height() - $(window).height() - 200;
+	  	}
+
+	  	$(window).scroll(function(){
+	   	 	if (loading) {
+	      		return;
+	    	}
+
+	    	if(nearBottomOfPage()) {
+	     	 	loading=true;
+		     	page++;
+		      	$.ajax({
+		       		url: '/?page=' + page,
+		        	type: 'get',
+		        	dataType: 'script',
+		        	success: function() {
+		          	$(window).sausage('draw');
+		          		loading=false;
+		       		}
+		        });
+			}
+		});
+
+		$(window).sausage();
+	}());
+</script>

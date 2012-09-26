@@ -1,0 +1,17 @@
+<div class="script_content">
+	<span class="label label-success script_number"><%= "ID#" + script.script_number.to_s %></span>
+	<% if related_scripts.count > 0 %>
+		<div class="related_comments" style="display:none">
+			<ul class="unstyled">
+				<% @i = 1 %>
+				<% related_scripts.each do |rs| %>
+					<li><p><%= "#" + @i.to_s + " " + rs.e_content %></p></li>	
+					<% @i += 1 %>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<h2><%= script.e_content %></h2>
+</div>
+
+<%= render "form", script: script %>

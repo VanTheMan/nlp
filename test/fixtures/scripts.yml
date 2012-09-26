@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  e_content: MyString
+  v_content: MyString
+  script_number: 1
+
+two:
+  e_content: MyString
+  v_content: MyString
+  script_number: 1
