@@ -1,0 +1,25 @@
+<div style = "text-align: center">
+	<h2>Top Translater</h2>
+</div>
+<% if @users %>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Num</th>
+			</tr>
+		</thead>
+		<% @i = 1 %>
+		<% @users.each do |u| %>
+			<tr>
+				<td><%= @i %></td>
+				<td><%= u.name %></td>
+				<td><%= u.num_translate %></td>
+				<% @i += 1 %>
+			</tr>
+		<% end %>
+	</ul>
+<% else %>
+	<h4>No users yet</h4>
+<% end %>

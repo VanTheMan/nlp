@@ -1,0 +1,10 @@
+<%= image_tag("adore.png", :class => "image")%>
+<h2>Cho minh biet ten voi</h2>
+<%= form_for @user do |f| %>
+	<div class="field">
+		<%= f.text_field :name, class: "input-xlarge" %>
+	</div>
+	<div class="submit pull-right">
+		<%= f.submit "Ok", class: "btn btn-primay " %>
+	</div>
+<% end %>
