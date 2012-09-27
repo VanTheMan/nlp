@@ -1,13 +1,13 @@
 <div class="hero-unit">
 	<% if signed_in? %>
-		<h2>Chao <%= current_user.name %></h2>
-		<p>Ban da dich duoc <%= current_user.num_translate %> cau</p>
+		<h2>Chào <%= current_user.name %></h2>
+		<p>Bạn đã dịch được <%= current_user.num_translate %> cau</p>
 		<div>
 			<%= image_tag("sweet_kiss.png", :class => "image")%>
-			<h3>Tiep tuc giup minh nhe ?</h3>
+			<h3>Tiếp tục giúp mình nhé ?</h3>
 		</div>
-			<%= link_to "Dich the thoi", "/byebye", class: "btn btn-large btn-warning" %>
-			<%= link_to "O", edit_scripts_path(), class: "btn btn-large btn-success" %>
+			<%= link_to "Dịch thế thôi", "/byebye", class: "btn btn-large btn-warning" %>
+			<%= link_to "Ờ", edit_scripts_path(), class: "btn btn-large btn-success" %>
 	<% else %>
 		<h2>Chào bạn</h2>
 		<p>Mình là Toàn, lớp K54CA, hiện nay mình đang cần dịch 10000 từ Tiếng Anh để phục vụ cho bài tập lớn môn Xử lí ngôn ngữ tự nhiên. Rất mong các bạn có thể bớt chút thời gian dịch cùng mình để mình có thể hoàn thành kịp tiến độ. Mình xin cảm ơn !^^!</p>
