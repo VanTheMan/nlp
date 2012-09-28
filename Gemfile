@@ -6,6 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'pry'
 gem 'kaminari'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'sqlite3', '1.3.5'
