@@ -44,4 +44,8 @@ class ScriptsController < ApplicationController
 		@script = Script.find(params[:id])
 	end
 
+	def export
+		@scripts = Script.all
+	end
+
 end

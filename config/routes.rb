@@ -9,6 +9,7 @@ Nlp::Application.routes.draw do
 
   match '/byebye' => 'users#sign_out'
   match '/top' => 'users#index'
+  match '/export' => 'scripts#export'
 
   resources :users
 

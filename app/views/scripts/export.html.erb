@@ -1,0 +1,13 @@
+<% id = 0 %>
+<% @scripts.each do |script |%>
+	<% if script.script_number != id %>
+		<%= "ID##{script.script_number}"%> <br>
+	<% end %>
+	<%= "<E>#{script.e_content}</E>"%><br>
+	<%= "<V>#{script.v_content}</V>" %><br>
+	<br>
+	<% if script.script_number != id %>
+		<%= "**********" %>
+		<br>
+	<% end %>
+<% end %>
